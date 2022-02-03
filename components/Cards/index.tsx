@@ -1,9 +1,7 @@
 import { Box, Divider, Text, Spinner, Button } from '@chakra-ui/react';
 import React from 'react';
 import axios from 'axios';
-
 import useAxios from 'axios-hooks';
-
 
 const Cards = () => {
 
@@ -23,7 +21,9 @@ const Cards = () => {
           borderRadius='10'
           fontFamily="cursive"
           bgColor='lightgrey' p="10" align="center">
+
           <Spinner color='teal.500' />
+
         </Box>
         :
         <Box margin="10"
@@ -32,6 +32,7 @@ const Cards = () => {
           borderRadius='10'
           fontFamily="cursive"
           bgColor='lightgrey' p="10" alignItems="center">
+
           {error ?
             <Text>{error}</Text>
             :

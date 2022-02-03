@@ -1,4 +1,4 @@
-import { Box, Divider, Text, Spinner, Button } from '@chakra-ui/react';
+import { Box, Divider, Text, Spinner, Button, Center } from '@chakra-ui/react';
 import React from 'react';
 import axios from 'axios';
 import useAxios from 'axios-hooks';
@@ -13,6 +13,8 @@ const Cards = () => {
 
   return (
     <>
+      <Center><Button onClick={() => refetch()} colorScheme='teal' variant='solid' w='90%' margin={5}> Generate Facts</Button></Center>
+
       <Divider />
       {loading ?
         <Box margin="10"
@@ -41,7 +43,6 @@ const Cards = () => {
         </Box>
       }
       <Divider />
-      <Button onClick={() => refetch()} colorScheme='teal' variant='solid' w='full'> Generate Facts</Button>
 
     </>
   )

@@ -5,7 +5,7 @@ import Cards from '../../components/Cards';
 const CardContainer = () => {
 
   return (
-    <Box w={'100%'} bgColor="red" margin="5">
+    <Box w={'100%'} bgColor="olivedrab" margin="2">
       <Cards />
     </Box>
   )

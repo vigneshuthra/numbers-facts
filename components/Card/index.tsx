@@ -3,21 +3,17 @@ import React from 'react';
 import axios from 'axios';
 import useAxios from 'axios-hooks';
 
-const Card = () => {
+const Card = ({number}: any) => {
 
   const [{ data, loading, error }, refetch] = useAxios(
-
-    "http://numbersapi.com/random?min=1&max=100"
-    
-
+    `http://numbersapi.com/${number}`
   );
-  console.log("data", data);
 
   return (
     <>
-      <Center><Button onClick={() => refetch()} colorScheme='teal' variant='solid' w='90%' margin={5}> Generate Facts</Button></Center>
+      {/* <Center><Button onClick={() => refetch()} colorScheme='teal' variant='solid' w='90%' margin={5}> Generate Facts</Button></Center> */}
 
-      <Divider />
+      {/* <Divider /> */}
       {loading ?
         <Box margin="10"
           w="60"
@@ -44,7 +40,7 @@ const Card = () => {
           }
         </Box>
       }
-      <Divider />
+      {/* <Divider /> */}
 
     </>
   )

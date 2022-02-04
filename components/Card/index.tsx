@@ -3,13 +3,15 @@ import React from 'react';
 import axios from 'axios';
 import useAxios from 'axios-hooks';
 
-const Cards = () => {
+const Card = () => {
 
   const [{ data, loading, error }, refetch] = useAxios(
 
     "http://numbersapi.com/random?min=1&max=100"
+    
 
   );
+  console.log("data", data);
 
   return (
     <>
@@ -48,4 +50,4 @@ const Cards = () => {
   )
 };
 
-export default Cards;
+export default Card;

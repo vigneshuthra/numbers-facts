@@ -1,48 +1,60 @@
 import { Box, Divider, Text, Spinner, Button, Center } from '@chakra-ui/react';
 import React from 'react';
-import axios from 'axios';
 import useAxios from 'axios-hooks';
+import Flippy, { FrontSide, BackSide } from 'react-flippy';
 
-const Card = ({number}: any) => {
+
+const Card = ({ x }: any) => {
 
   const [{ data, loading, error }, refetch] = useAxios(
-    `http://numbersapi.com/${number}`
+    `http://numbersapi.com/${x}`
   );
 
   return (
-    <>
-      {/* <Center><Button onClick={() => refetch()} colorScheme='teal' variant='solid' w='90%' margin={5}> Generate Facts</Button></Center> */}
+    <Flippy flipOnHover={true} >
+      <FrontSide style={{
+        margin: '10px',
+        width: "250px",
+        height: "300px",
+        borderRadius: '10px',
+        backgroundColor: '#90ee90', padding: "30px"
+      }} animationDuration={800}>
 
-      {/* <Divider /> */}
+        <Center>
+          <Text fontFamily="serif" p={10} fontSize={80}>{x}</Text>
+        </Center>
+
+      </FrontSide>
       {loading ?
-        <Box margin="10"
-          w="60"
-          h="72"
-          borderRadius='10'
-          fontFamily="cursive"
-          bgColor='lightgrey' p="10" align="center">
+        <BackSide style={{
+          margin: '10px',
+          width: "250px",
+          height: "300px",
+          borderRadius: '10px',
+          fontFamily: "cursive",
+          backgroundColor: '#90ee90', padding: "30px", align: "center"
+        }} animationDuration={800}>
 
           <Spinner color='teal.500' />
-
-        </Box>
+        </BackSide>
         :
-        <Box margin="10"
-          w="60"
-          h="72"
-          borderRadius='10'
-          fontFamily="cursive"
-          bgColor='lightgrey' p="10" alignItems="center">
+        <BackSide style={{
+          margin: '10px',
+          width: "250px",
+          height: "300px",
+          borderRadius: '10px',
+          fontFamily: "cursive",
+          backgroundColor: '#90ee90', padding: "30px", align: "center"
+        }} animationDuration={800}>
 
           {error ?
             <Text>{error}</Text>
             :
-            <Text> "{data}" </Text>
+            <Text p={1} fontSize={20}> "{data}" </Text>
           }
-        </Box>
+        </BackSide>
       }
-      {/* <Divider /> */}
-
-    </>
+    </Flippy>
   )
 };
 

@@ -28,9 +28,9 @@ const CardContainer = () => {
       </Box>
       <SimpleGrid columns={5} spacing={1} bgColor="green.100">
 
-        {numberList.map((card: any) => (
+        {numberList.map((card: any, index) => (
 
-          <Card x={card.number} />
+          <Card key={index} x={card.number} />
 
         ))}
       </SimpleGrid>

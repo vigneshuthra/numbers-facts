@@ -7,7 +7,7 @@ import Flippy, { FrontSide, BackSide } from 'react-flippy';
 const Card = ({ x }: any) => {
 
   const [{ data, loading, error }, refetch] = useAxios(
-    `http://numbersapi.com/${x}`
+    `https://numbersapi.com/${x}`
   );
 
   return (

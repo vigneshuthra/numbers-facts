@@ -7,7 +7,7 @@ import Flippy, { FrontSide, BackSide } from 'react-flippy';
 const Card = ({ x }: any) => {
 
   const [{ data, loading, error }, refetch] = useAxios(
-    `http://numbersapi.com/${x}`
+    `https://cors-everywhere-me.herokuapp.com/http://numbersapi.com/${x}`
   );
 
   return (

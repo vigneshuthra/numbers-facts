@@ -4,7 +4,6 @@ import Card from '../../components/Card';
 const CardContainer = () => {
 
   const [numberList, setNumberList] = useState<any>([]);
-  console.log("numberList", numberList)
 
   useEffect(() => {
     getRandom()
